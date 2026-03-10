@@ -6,11 +6,11 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 12:26:32 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/10 17:35:49 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/10 18:10:56 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_space(char *c)
+static int	is_space(char *c)
 {
 	if (*c == ' ' || *c == '\f' || *c == '\n' || *c == '\r')
 	{
@@ -23,7 +23,7 @@ int	is_space(char *c)
 	return (0);
 }
 
-char	*find_non_space(char *str)
+static char	*find_non_space(char *str)
 {
 	while (str)
 	{
@@ -36,7 +36,7 @@ char	*find_non_space(char *str)
 	return (str);
 }
 
-char	*sign_is_positive(int *sign, char *str)
+static char	*sign_is_positive(int *sign, char *str)
 {
 	int	sign_is_plus;
 	int	i;
@@ -55,7 +55,7 @@ char	*sign_is_positive(int *sign, char *str)
 	return (&str[i]);
 }
 
-int	get_number(char *str)
+static int	get_number(char *str)
 {
 	int	number;
 
