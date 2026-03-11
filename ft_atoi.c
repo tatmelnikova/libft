@@ -6,11 +6,11 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 12:26:32 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/10 18:10:56 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/11 14:12:16 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	is_space(char *c)
+static int	is_space(const char *c)
 {
 	if (*c == ' ' || *c == '\f' || *c == '\n' || *c == '\r')
 	{
@@ -23,36 +23,36 @@ static int	is_space(char *c)
 	return (0);
 }
 
-static char	*find_non_space(char *str)
+static char	*find_non_space(const char *str)
 {
 	while (str)
 	{
 		if (!is_space(str))
 		{
-			return (str);
+			return ((char *) str);
 		}
 		str++;
 	}
-	return (str);
+	return ((char *) str);
 }
 
-static char	*sign_is_positive(int *sign, char *str)
+static char	*get_sign(int *sign, char *str)
 {
-	int	sign_is_plus;
-	int	i;
+	int	sign_is_positive;
 
-	i = 0;
-	sign_is_plus = 1;
-	while (str[i] == '+' || str[i] == '-')
+	sign_is_positive = 1;
+	if (str[0] == '+')
 	{
-		if (str[i] == '-')
-		{
-			sign_is_plus = sign_is_plus * -1;
-		}
-		i++;
+		sign_is_positive = 1;
+		str++;
 	}
-	*sign = sign_is_plus;
-	return (&str[i]);
+	if (str[0] == '-')
+	{
+		sign_is_positive = -1;
+		str++;
+	}
+	*sign = sign_is_positive;
+	return (str);
 }
 
 static int	get_number(char *str)
@@ -76,7 +76,7 @@ int	ft_atoi(const char *str)
 
 	is_positive = 1;
 	search_position = find_non_space(str);
-	search_position = sign_is_positive(&is_positive, search_position);
+	search_position = get_sign(&is_positive, search_position);
 	number = get_number(search_position);
 	return (is_positive * number);
 }
@@ -86,7 +86,17 @@ int	ft_atoi(const char *str)
 // {
 // 	char	*test_string;
 // 	int		result;
+
 // 	test_string = "567";
+// 	result = ft_atoi(test_string);
+// 	printf("%s = %d\n", test_string, result);
+// 	test_string = " \n\t\f\r\v-567";
+// 	result = ft_atoi(test_string);
+// 	printf("%s = %d\n", test_string, result);
+// 	test_string = " \n\t\f\r\v+567";
+// 	result = ft_atoi(test_string);
+// 	printf("%s = %d\n", test_string, result);
+// 	test_string = " \n\t\f\r\v567";
 // 	result = ft_atoi(test_string);
 // 	printf("%s = %d\n", test_string, result);
 // 	test_string = " \n\t\f\r\v---567";
@@ -95,16 +105,6 @@ int	ft_atoi(const char *str)
 // 	test_string = " \n\t\f\r\v-+-+-67a89";
 // 	result = ft_atoi(test_string);
 // 	printf("%s = %d\n", test_string, result);
-// 	test_string = "   ---+--+1234ab567";
-// 	result = ft_atoi(test_string);
-// 	printf("%s = %d\n", test_string, result);
-// 	test_string = "   ---+--+01234ab567";
-// 	result = ft_atoi(test_string);
-// 	printf("%s = %d\n", test_string, result);
-// 	test_string = "   --+--+1234ab567";
-// 	result = ft_atoi(test_string);
-// 	printf("%s = %d\n", test_string, result);
-// 	test_string = "   --+--+0";
 // 	result = ft_atoi(test_string);
 // 	printf("%s = %d\n", test_string, result);
 // 	test_string = "";
