@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 14:13:24 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 14:24:27 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/12 15:16:32 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 // or NULL if the character is not found.  The terminating null
 // byte is considered part of the string, so that if c is
 // specified as '\0', these functions return a pointer to the terminator.
-char	*strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 

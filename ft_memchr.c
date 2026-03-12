@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 14:35:55 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 14:41:23 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/12 15:15:40 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 // The memchr() and memrchr() functions return a pointer to the
 // matching byte or NULL if the character does not  occur  in  
 // the  given  memory area.
-void	*memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*str;
 

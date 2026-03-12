@@ -6,13 +6,13 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 14:16:59 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/11 15:31:14 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/12 15:16:15 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*memset(void *dst, int c, size_t n)
+void	*ft_memset(void *dst, int c, size_t n)
 {
 	unsigned char	*d;
 
