@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:37:40 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 15:31:28 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/12 16:22:30 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,4 @@ char	*ft_strchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+void	*ft_calloc(size_t nmemb, size_t size);
