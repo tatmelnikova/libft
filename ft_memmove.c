@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 16:59:16 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 14:08:10 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/12 14:18:01 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	s = (char *) src;
 	d = (char *) dest;
-
 	if (d < s)
 	{
 		while (n > 0)
