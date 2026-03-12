@@ -6,11 +6,12 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 16:10:21 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 16:21:50 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/12 16:30:28 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 // The calloc() function allocates memory for an array of nmemb 
 // elements of size bytes each and returns a pointer to the allocated
@@ -30,11 +31,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	result = (unsigned char *)malloc(nmemb * size);
 	if (result != NULL)
 	{
-		while (size > 0)
-		{
-			result[size - 1] = 0;
-			size--;
-		}
+		ft_bzero(result, size * nmemb);
 	}
 	return (result);
 }
