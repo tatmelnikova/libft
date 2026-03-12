@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 15:21:52 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 15:30:49 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/12 19:06:40 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	{
 		if (big[position] != little[position])
 		{
-			return (big[position]);
+			return ((char *)&big[position]);
 		}
 		position++;
 	}

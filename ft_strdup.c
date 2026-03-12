@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:24:00 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/10 17:55:32 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/12 19:11:06 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ char	*ft_strdup(const char *str)
 	int		strlen;
 	char	*dup_str;
 
-	strlen = ft_strlen(str);
+	strlen = ft_strlen((char *)str);
 	dup_str = (char *)malloc(sizeof(char) * (strlen + 1));
-	ft_strcpy(dup_str, str);
+	ft_strcpy(dup_str, (char *)str);
 	return (dup_str);
 }
 

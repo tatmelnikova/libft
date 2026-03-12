@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 14:19:31 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 14:24:44 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/12 19:04:35 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ char	*strrchr(const char *s, int c)
 	char	*last_match;
 
 	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] == c)
-			last_match = s[i];
-		i++;
+		if (*s == (char)c)
+			last_match = (char *)s;
+		s++;
 	}
-	if (s[i] == '\0' && c == '\0')
-		last_match = s[i];
+	if (*s == '\0' && c == '\0')
+		last_match = (char *)s;
 	if (last_match)
 		return (last_match);
 	return (NULL);

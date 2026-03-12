@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 14:42:08 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 15:10:56 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/12 19:10:08 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*m1;
 	unsigned char	*m2;
 
-	m1 = s1;
-	m2 = s2;
+	m1 = (unsigned char *)s1;
+	m2 = (unsigned char *)s2;
 	while (n > 0)
 	{
 		if (*m1 != *m2)

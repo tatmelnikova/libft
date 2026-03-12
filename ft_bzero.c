@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 15:32:48 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 15:16:00 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/12 19:09:37 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ void	ft_bzero(void *b, size_t n)
 {
 	char	*p;
 
+	p = (char *)b;
 	while (n > 0)
 	{
 		*p = '\0';
 		n--;
-		b++;
+		p++;
 	}
 }
