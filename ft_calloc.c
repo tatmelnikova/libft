@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 16:10:21 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 16:30:28 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/13 15:11:28 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@
 // which is suitably aligned for any built-in type.  On error, these
 // functions return NULL.  NULL may also be returned by a successful
 // call to calloc() with nmemb or size equal to zero.
+// SUBJECT:
+// Depending on your current operating system, the ’calloc’ 
+// function’s behavior may differ from its man page description. 
+// You must follow this rule: If nmemb or size is 0, then calloc()
+// returns a unique pointer value that can be successfully passed to
+// free().
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*result;
