@@ -6,11 +6,12 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 16:34:07 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/16 16:34:08 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/16 18:46:17 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include "libft.h"
 
 // The strlcpy() function copy strings. strlcpy() takes the full 
 // size of the buffer (not just the length) and guarantees to 
@@ -22,16 +23,23 @@
 // The strlcpy() function copies up to size - 1 characters from the 
 // NUL-terminated string src to dst, NUL-terminating the result.
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
+	size_t	srcsize;
 	size_t	i;
 
+	if (!dst || !src)
+		return (0);
+	srcsize = ft_strlen((char *)src);
 	i = 0;
-	while (i < size && src[i] != '\0')
+	if (dstsize != 0)
 	{
-		dst[i] = src[i];
-		i++;
+		while (src[i] != '\0' && i < (dstsize - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dst[i] = '\0';
-	return (i);
+	return (srcsize);
 }
