@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 16:34:07 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/16 18:46:17 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/16 18:47:10 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,10 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	srcsize;
 	size_t	i;
 
 	if (!dst || !src)
 		return (0);
-	srcsize = ft_strlen((char *)src);
 	i = 0;
 	if (dstsize != 0)
 	{
@@ -41,5 +39,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		dst[i] = '\0';
 	}
-	return (srcsize);
+	return (ft_strlen((char *)src));
 }
