@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:37:40 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 18:54:48 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/16 16:33:39 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <string.h>
-
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

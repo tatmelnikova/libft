@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 15:38:58 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 14:18:15 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/16 16:33:26 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	s = (char *) src;
 	d = (char *) dest;
-	if (d < s)
+	if (s == d)
+		return (dest);
+	while (n > 0)
 	{
-		while (n > 0)
-		{
-			*d++ = *s++;
-			n--;
-		}
-	}
-	else
-	{
-		d = d + n - 1;
-		s = s + n - 1;
-		while (n > 0)
-		{
-			*d-- = *s--;
-		}
+		*d++ = *s++;
+		n--;
 	}
 	return (dest);
 }
