@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 14:19:31 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 19:04:35 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/17 16:44:30 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 // The terminating null byte is considered part of the string, so
 // that if c is specified as '\0', these functions return a 
 // pointer to the terminator.
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
 	char	*last_match;
