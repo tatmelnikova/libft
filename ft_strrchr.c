@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 14:19:31 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/17 16:44:30 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/17 17:00:52 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ char	*ft_strrchr(const char *s, int c)
 	char	*last_match;
 
 	i = 0;
-	while (*s)
+	last_match = NULL;
+	while (*s != '\0')
 	{
 		if (*s == (char)c)
 			last_match = (char *)s;
@@ -33,7 +34,16 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	if (*s == '\0' && c == '\0')
 		last_match = (char *)s;
-	if (last_match)
-		return (last_match);
-	return (NULL);
+	return (last_match);
 }
+
+// int main(void)
+// {
+// 	char 	*result;
+// 	char	str2[] = "bonjour";
+// 	int chr;
+
+// 	chr = (int)'s';
+// 	result = strrchr(str2, chr);
+// 	return 0;
+// }
