@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 16:24:00 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 19:11:06 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/17 18:28:55 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ char	*ft_strdup(const char *str)
 
 	strlen = ft_strlen((char *)str);
 	dup_str = (char *)malloc(sizeof(char) * (strlen + 1));
+	if (dup_str == NULL)
+		return (NULL);
 	ft_strcpy(dup_str, (char *)str);
 	return (dup_str);
 }
@@ -67,6 +69,7 @@ char	*ft_strdup(const char *str)
 // 	str = "123412";
 // 	dup = ft_strdup(str);
 // 	printf("dup = %s\n", dup);
+// 	free(dup);
 // 	return (0);
 // }
 // The  strdup()  function returns a pointer 
