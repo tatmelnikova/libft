@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 12:26:32 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/11 14:12:16 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/17 15:52:43 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static char	*get_sign(int *sign, char *str)
 		sign_is_positive = 1;
 		str++;
 	}
-	if (str[0] == '-')
+	else if (str[0] == '-')
 	{
 		sign_is_positive = -1;
 		str++;
@@ -87,6 +87,9 @@ int	ft_atoi(const char *str)
 // 	char	*test_string;
 // 	int		result;
 
+// 	test_string = "+-54";
+// 	result = ft_atoi(test_string);
+// 	printf("%s = %d\n", test_string, result);
 // 	test_string = "567";
 // 	result = ft_atoi(test_string);
 // 	printf("%s = %d\n", test_string, result);
