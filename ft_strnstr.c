@@ -6,40 +6,73 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 15:21:52 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 19:06:40 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/17 15:46:38 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include "libft.h"
 
+static int	compare_substrings(char *find_in, char *to_find, int len)
+{
+	int		position;
+
+	position = 0;
+	while (position < len && find_in[position] != '\0')
+	{
+		if (find_in[position] != to_find[position])
+		{
+			return (0);
+		}
+		position++;
+	}
+	return (1);
+}
+
+// The strnstr() function locates the first occurrence of the 
+// null-terminated string little in the string big, where not more
+// than len characters are searched.  Characters that appear 
+// after a ‘\0’ character are not searched.
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	position;
+	int		result;
+	char	*find_in;
+	char	*to_find;
 
+	find_in = (char *)big;
+	to_find = (char *)little;
 	position = 0;
-	while (position < len)
+	if (!len)
+		return (NULL);
+	if (!to_find)
+		return (find_in);
+	while (find_in && position < len - ft_strlen(to_find))
 	{
-		if (big[position] != little[position])
+		result = compare_substrings(find_in, to_find, ft_strlen(to_find));
+		if (result)
 		{
-			return ((char *)&big[position]);
+			return (find_in);
 		}
+		find_in++;
 		position++;
 	}
 	return (NULL);
 }
 
-//#include <unistd.h>
-// #include <string.h>
+// #include <unistd.h>
+// #include <bsd/string.h>
 // int	main(void)
 // {
-// 	char	*str = "543a---fdhkks";
-// 	char	*to_find = "1a--";
-// 	//char	*str = "";
-// 	//char	*to_find = "";
+// 	char	*str = "lorem ipsum dolor sit amet";
+// 	char	*to_find = "ipsum";
 // 	char	*found_pointer;
 // 	char	*expected_pointer;
-// 	found_pointer = ft_strstr(str, to_find);
-// 	expected_pointer = strstr(str, to_find);
+// 	int		len;
+
+// 	len = 15;
+// 	found_pointer = ft_strnstr(str, to_find, len);
+// 	expected_pointer = strnstr(str, to_find, len);
 // 	if (found_pointer != expected_pointer)
 // 	{
 // 		return (1);
