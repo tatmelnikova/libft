@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 16:34:07 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/16 18:47:10 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/20 15:39:18 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 // This means that for strlcpy() src must be NUL-terminated.
 // The strlcpy() function copies up to size - 1 characters from the 
 // NUL-terminated string src to dst, NUL-terminating the result.
-
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
