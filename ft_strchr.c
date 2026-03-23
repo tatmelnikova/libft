@@ -20,9 +20,6 @@
 // specified as '\0', these functions return a pointer to the terminator.
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-
-	i = 0;
 	while (*s)
 	{
 		if (*s == (char)c)
