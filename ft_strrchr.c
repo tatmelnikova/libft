@@ -21,10 +21,8 @@
 // pointer to the terminator.
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
 	char	*last_match;
 
-	i = 0;
 	last_match = NULL;
 	while (*s != '\0')
 	{
