@@ -25,10 +25,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	if (s == NULL)
 		return (NULL);
-	if (start >= ft_strlen((char *)s))
+	if (start >= ft_strlen(s))
 		return (ft_calloc(1, sizeof(char)));
-	if (start + len > ft_strlen((char *)s))
-		len = ft_strlen((char *)s) - start;
+	if (start + len > ft_strlen(s))
+		len = ft_strlen(s) - start;
 	sstr = malloc(sizeof(char) * (len + 1));
 	if (!sstr)
 		return (NULL);
