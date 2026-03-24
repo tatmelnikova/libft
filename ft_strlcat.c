@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 16:42:20 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 19:07:40 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/24 16:50:48 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,14 @@
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dst_len;
+	size_t	src_len;
 	size_t	space_left;
 	size_t	i;
 
+	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
-	if (dst_len > size)
-		return (size + ft_strlen((char *)src));
+	if (dst_len >= size)
+		return (size + src_len);
 	space_left = size - dst_len - 1;
 	i = 0;
 	while (i < space_left && src[i] != '\0')
@@ -38,5 +40,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		i++;
 	}
 	dst[i + dst_len] = '\0';
-	return (dst_len + ft_strlen((char *)src));
+	return (dst_len + src_len);
 }
