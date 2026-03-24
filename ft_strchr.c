@@ -6,11 +6,11 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 14:13:24 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/12 19:01:24 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:18:47 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 // The strchr() function returns a pointer to the first occurrence 
 // of the character c in the string s.

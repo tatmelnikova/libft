@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 17:17:34 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/20 16:07:49 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:15:47 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,7 @@ char	**ft_split(char const *s, char c)
 // 	}
 // 	return (0);
 // }
-//printf("len = %d, start = %d, end = %d\n", end_pos - start_position, start_position, end_pos);
-//char *s = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
+// printf("len = %d, start = %d, end = %d\n", end_pos -
+// start_position, start_position, end_pos);
+// char *s = "lorem ipsum dolor sit amet, consectetur
+//  adipiscing elit. Sed non risus. Suspendisse";
