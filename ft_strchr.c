@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 14:13:24 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/24 14:18:47 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/24 17:22:43 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if (*s == '\0' && c == '\0')
+	if (*s == '\0' && (char)c == '\0')
 		return ((char *)s);
 	return (NULL);
 }
