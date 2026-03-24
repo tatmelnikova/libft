@@ -6,7 +6,7 @@
 /*   By: tkazmina <tkazmina@student.codam.nl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 17:17:34 by tkazmina          #+#    #+#             */
-/*   Updated: 2026/03/24 14:15:47 by tkazmina         ###   ########.fr       */
+/*   Updated: 2026/03/24 18:39:45 by tkazmina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,29 +59,43 @@ static size_t	find_start_position(char *s, size_t start_from, char c)
 	return (pos);
 }
 
+static char	**ft_free(char **arr)
+{
+	size_t	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	size_t	count;
-	size_t	end_pos;
-	size_t	start_pos;
+	size_t	e_pos;
+	size_t	s_pos;
 	size_t	word_pos;
 
 	count = count_words(s, c);
 	result = (char **)malloc((count + 1) * sizeof(char *));
 	if (!result || !s)
 		return (NULL);
-	end_pos = 0;
+	e_pos = 0;
 	word_pos = 0;
 	while (word_pos < count)
 	{
-		start_pos = find_start_position((char *)s, end_pos, c);
-		end_pos = find_end_pos((char *)s, start_pos, c);
-		result[word_pos] = malloc(sizeof(char) * (end_pos - start_pos + 1));
-		if (result[word_pos])
-			ft_strlcpy(result[word_pos], s + start_pos,
-				end_pos - start_pos + 1);
-		start_pos = end_pos;
+		s_pos = find_start_position((char *)s, e_pos, c);
+		e_pos = find_end_pos((char *)s, s_pos, c);
+		result[word_pos] = malloc(sizeof(char) * (e_pos - s_pos + 1));
+		if (!result[word_pos])
+			return (ft_free(result));
+		ft_strlcpy(result[word_pos], s + s_pos, e_pos - s_pos + 1);
+		s_pos = e_pos;
 		word_pos++;
 	}
 	result[word_pos] = NULL;
